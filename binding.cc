@@ -418,7 +418,7 @@ namespace zmq {
           String::New("Must pass an option")));
     if (!args[0]->IsNumber())
       return ThrowException(Exception::TypeError(
-          String::New("Option must be an integer (line 421)")));
+          String::New("Option must be an integer")));
     int64_t option = args[0]->ToInteger()->Value();
 
     GET_SOCKET(args);
@@ -440,12 +440,15 @@ namespace zmq {
   }
 
   Handle<Value> Socket::SetSockOpt(const Arguments &args) {
+    println(args[0]);
+    println(args[1]);
+    println(args[2]);
     if (args.Length() != 2)
       return ThrowException(Exception::Error(
         String::New("Must pass an option and a value")));
     if (!args[0]->IsNumber())
       return ThrowException(Exception::TypeError(
-          String::New("Option must be an integer (line 448)")));
+          String::New("Option must be an integer")));
     int64_t option = args[0]->ToInteger()->Value();
 
     GET_SOCKET(args);
