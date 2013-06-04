@@ -440,9 +440,7 @@ namespace zmq {
   }
 
   Handle<Value> Socket::SetSockOpt(const Arguments &args) {
-    printf(args[0]);
-    printf(args[1]);
-    printf(args[2]);
+    printf("%s %d", args[0], args[1]);
     if (args.Length() != 2)
       return ThrowException(Exception::Error(
         String::New("Must pass an option and a value")));
