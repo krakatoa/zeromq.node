@@ -418,7 +418,7 @@ namespace zmq {
           String::New("Must pass an option")));
     if (!args[0]->IsNumber())
       return ThrowException(Exception::TypeError(
-          String::New("Option must be an integer")));
+          String::New("Option must be an integer (line 421)")));
     int64_t option = args[0]->ToInteger()->Value();
 
     GET_SOCKET(args);
@@ -445,7 +445,7 @@ namespace zmq {
         String::New("Must pass an option and a value")));
     if (!args[0]->IsNumber())
       return ThrowException(Exception::TypeError(
-          String::New("Option must be an integer")));
+          String::New("Option must be an integer (line 448)")));
     int64_t option = args[0]->ToInteger()->Value();
 
     GET_SOCKET(args);
